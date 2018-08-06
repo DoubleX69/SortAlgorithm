@@ -35,3 +35,19 @@ void selectSort( vector<int>& v )
         std::swap( v[i], v[sel] );
     }
 }
+
+//插入排序
+// 将未排序部分依次插入到以排序部分合适的位置
+void insertSort( vector<int>& v )
+{
+    for ( int i = 1; i < v.size() ; i++ )
+    {
+        int j = i;
+        int temp = v[i];
+        for ( j = i; j > 0 && v[j - 1] > temp; --j )
+        {
+            v[j] = v[j - 1];
+        }
+        v[j] = temp;
+    }
+}

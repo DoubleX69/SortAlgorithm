@@ -10,7 +10,7 @@ int main( )
 
     t.add( "Bubble Sort", bubbleSort );
     t.add( "Select Sort", selectSort );
-
+    t.add( "Insert Sort", insertSort );
 
     if ( t.test( ) )
     {

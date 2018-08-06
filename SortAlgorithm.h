@@ -11,5 +11,7 @@ void bubbleSort( vector<int>& v );
 //选择排序
 void selectSort( vector<int>& v );
 
+//插入排序
+void insertSort(vector<int>& v);
 #endif // !__SORT_ALGORITHM_H__
 
