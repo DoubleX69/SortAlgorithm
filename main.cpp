@@ -9,6 +9,7 @@ int main( )
     Test t;
 
     t.add( "Bubble Sort", bubbleSort );
+    t.add( "Select Sort", selectSort );
 
 
     if ( t.test( ) )
