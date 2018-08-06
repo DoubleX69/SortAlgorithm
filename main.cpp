@@ -11,6 +11,7 @@ int main( )
     t.add( "Bubble Sort", bubbleSort );
     t.add( "Select Sort", selectSort );
     t.add( "Insert Sort", insertSort );
+    t.add( "Merge  Sort", mergeSort );
 
     if ( t.test( ) )
     {

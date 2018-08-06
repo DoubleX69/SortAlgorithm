@@ -51,3 +51,44 @@ void insertSort( vector<int>& v )
         v[j] = temp;
     }
 }
+
+void mergeArray( vector<int>& v, int start, int mid, int end, vector<int>& temp )
+{
+    int start1 = start , end1 = mid;
+    int start2 = mid + 1, end2 = end;
+    int k = 0;
+
+    while ( start1 <= end1 && start2 <= end2 )
+    {
+        temp[k++] = (v[start1] < v[start2]) ? v[start1++] : v[start2++];
+    }
+    while ( start1 <= end1 )
+    {
+        temp[k++] = v[start1++];
+    }
+    while ( start2 <= end2 )
+    {
+        temp[k++] = v[start2++];
+    }
+
+    for ( int i = 0; i < k; ++i )
+    {
+        v[start + i] = temp[i];
+    }
+}
+
+void mergeSort( vector<int>& v, int start, int end, vector<int>& temp )
+{
+    if ( start < end )
+    {
+        int mid = (start + end) / 2;
+        mergeSort( v, start, mid , temp );
+        mergeSort( v, mid + 1, end, temp );
+        mergeArray( v, start, mid, end, temp );
+    }
+}
+void mergeSort( vector<int>& v )
+{
+    vector<int> temp(  v.size( ) , 0 );
+    mergeSort( v, 0, v.size( ) - 1, temp );
+}
