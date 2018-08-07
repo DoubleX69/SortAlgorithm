@@ -1,6 +1,7 @@
 ﻿
 #include "SortAlgorithm.h"
 #include <iostream>
+#include <algorithm>
 
 //冒泡排序
 //相邻数据两两对比，较大的数据上浮
@@ -50,6 +51,35 @@ void insertSort( vector<int>& v )
         }
         v[j] = temp;
     }
+}
+
+//计数排序
+//非比较排序，可以突破NlogN的下限
+void countSort( vector<int>&v )
+{
+    int max_val = *max_element( v.begin( ), v.end( ) );
+    int min_val = *min_element( v.begin( ), v.end( ) );
+    int len = max_val - min_val + 1;
+
+    vector<int> c( len, 0 );
+    vector<int> a( v.size( ), 0 );
+
+    for ( int i = 0; i < v.size(); ++i )
+    {
+        c[v[i] - min_val] ++;
+    }
+
+    for ( int i = 1; i < len; ++i )
+    {
+        c[i] += c[i - 1];
+    }
+
+    for ( int i = 0; i < v.size( ); ++i )
+    {
+        a[--c[v[i] - min_val]] = v[i];
+    }
+
+    v = a;
 }
 
 void mergeArray( vector<int>& v, int start, int mid, int end, vector<int>& temp )

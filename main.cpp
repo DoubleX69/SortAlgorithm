@@ -12,6 +12,7 @@ int main( )
     t.add( "Select Sort", selectSort );
     t.add( "Insert Sort", insertSort );
     t.add( "Merge  Sort", mergeSort );
+    t.add( "Count  Sort", countSort );
 
     if ( t.test( ) )
     {

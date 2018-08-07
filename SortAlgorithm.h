@@ -14,6 +14,9 @@ void selectSort( vector<int>& v );
 //插入排序
 void insertSort(vector<int>& v);
 
+//计数排序
+void countSort( vector<int>&N );
+
 void mergeArray( vector<int>& v, int start, int mid, int end, vector<int>& temp );
 void mergeSort( vector<int>& v, int start, int end, vector<int>& temp );
 void mergeSort( vector<int>& v );
