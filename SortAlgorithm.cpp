@@ -122,3 +122,45 @@ void mergeSort( vector<int>& v )
     vector<int> temp(  v.size( ) , 0 );
     mergeSort( v, 0, v.size( ) - 1, temp );
 }
+
+//快速排序
+void quickSort( vector<int>& v )
+{
+    quickSort( v, 0 , v.size( ) - 1 );
+}
+void quickSort( vector<int>& v, int start, int end )
+{
+    if ( start < end )
+    {
+        int privot = v[start];
+        int left = start + 1;
+        int right = end;
+
+        while ( left < right )
+        {
+            while ( v[right] >= privot && left < right )
+            {
+                right--;
+            }
+
+            while ( v[left] < privot && left < right )
+            {
+                left++;
+            }
+
+            std::swap( v[left], v[right] );
+        }
+
+        if ( v[right] <= privot )
+        {
+            std::swap( v[start], v[right] );
+        }
+        else
+        {
+            right--;
+        }
+
+        quickSort( v, start, right - 1 );
+        quickSort( v, right + 1, end );
+    }
+}

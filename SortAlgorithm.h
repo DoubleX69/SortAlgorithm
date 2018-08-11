@@ -21,5 +21,9 @@ void mergeArray( vector<int>& v, int start, int mid, int end, vector<int>& temp 
 void mergeSort( vector<int>& v, int start, int end, vector<int>& temp );
 void mergeSort( vector<int>& v );
 
+//快速排序
+void quickSort( vector<int>& v );
+void quickSort( vector<int>& v, int start, int end );
+
 #endif // !__SORT_ALGORITHM_H__
 

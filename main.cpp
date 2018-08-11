@@ -13,6 +13,7 @@ int main( )
     t.add( "Insert Sort", insertSort );
     t.add( "Merge  Sort", mergeSort );
     t.add( "Count  Sort", countSort );
+    t.add( "Quick  Sort", quickSort );
 
     if ( t.test( ) )
     {
