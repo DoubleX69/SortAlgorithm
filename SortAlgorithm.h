@@ -25,5 +25,9 @@ void mergeSort( vector<int>& v );
 void quickSort( vector<int>& v );
 void quickSort( vector<int>& v, int start, int end );
 
+
+void quickSort2( vector<int>& v );
+void quickSort2( vector<int>& v, int start, int end );
+
 #endif // !__SORT_ALGORITHM_H__
 

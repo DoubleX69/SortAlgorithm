@@ -164,3 +164,40 @@ void quickSort( vector<int>& v, int start, int end )
         quickSort( v, right + 1, end );
     }
 }
+
+void quickSort2( vector<int>& v )
+{
+    quickSort2( v, 0, v.size( ) - 1 );
+}
+
+//快速排序
+//三相切分
+void quickSort2( vector<int>& v, int start, int end )
+{
+    if ( start < end )
+    {
+        int pivot = v[start];
+        int p_idx = start;
+        int left = start + 1;
+        int right = end;
+
+        while ( left <= right )
+        {
+            if ( v[left] < pivot )
+            {
+                std::swap( v[left++], v[p_idx++] );
+            }
+            else if ( v[left] > pivot )
+            {
+                std::swap( v[right--], v[left] );
+            }
+            else
+            {
+                left++;
+            }
+        }
+
+        quickSort2( v, start, p_idx - 1 );
+        quickSort2( v, p_idx + 1, end );
+    }
+}
