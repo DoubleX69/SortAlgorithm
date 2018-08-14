@@ -7,7 +7,7 @@
 //相邻数据两两对比，较大的数据上浮
 void bubbleSort( vector<int> & v )
 {
-    for ( int i = 0; i < v.size( ) - 1; ++i )
+    for ( int i = 0; i <  v.size( )  - 1  ; ++i )
     {
         for ( int j = 0; j < v.size() - 1 - i ; ++j )
         {
@@ -121,6 +121,46 @@ void mergeSort( vector<int>& v )
 {
     vector<int> temp(  v.size( ) , 0 );
     mergeSort( v, 0, v.size( ) - 1, temp );
+}
+
+//堆排序
+void heapSort( vector<int>& v )
+{
+    for ( int i = v.size( ) / 2 -1; i >= 0; --i )
+    {
+        maxHeapify( v, i, v.size( ) - 1 );
+    }
+
+    for ( int i = v.size( ) - 1; i > 0; --i )
+    {
+        std::swap( v[0], v[i] );
+        maxHeapify( v, 0, i-1 );
+    }
+}
+
+//最大堆调整
+void maxHeapify( vector<int>& v, int start, int end )
+{
+    int parent = start;
+    int left = 2 * parent + 1;
+
+    while ( left <= end )
+    {
+        if ( left + 1 <= end &&  v[left] < v[left + 1]  )
+        {
+            left++;
+        }
+        if ( v[parent] > v[left] )
+        {
+            return;
+        }
+        else
+        {
+            std::swap( v[parent], v[left] );
+            parent = left;
+            left = 2 * parent + 1;
+        }
+    }
 }
 
 //快速排序

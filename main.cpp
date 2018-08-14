@@ -15,6 +15,7 @@ int main( )
     t.add( "Count  Sort", countSort );
     t.add( "Quick  Sort", quickSort );
     t.add( "Quick  Sort2", quickSort2 );
+    t.add( "Heap   Sort", heapSort );
 
     if ( t.test( ) )
     {

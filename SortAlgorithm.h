@@ -21,6 +21,11 @@ void mergeArray( vector<int>& v, int start, int mid, int end, vector<int>& temp 
 void mergeSort( vector<int>& v, int start, int end, vector<int>& temp );
 void mergeSort( vector<int>& v );
 
+//堆排序
+void heapSort( vector<int>& v );
+//最大堆调整
+void maxHeapify( vector<int>& v, int start, int end );
+
 //快速排序
 void quickSort( vector<int>& v );
 void quickSort( vector<int>& v, int start, int end );
