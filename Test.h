@@ -24,6 +24,7 @@ public:
     bool add( const string& name , SORT_FUNC sort_func );
     bool test( SORT_FUNC sort_func );
     bool test( );
+    const map<string,long>& calcTime( int size );
 
 private:
     vector<int> genTestVector( int size );
@@ -35,6 +36,7 @@ private:
 
 private:
     map< string , SORT_FUNC>           sort_funcs_;
+    map<string, long>                  elapsed_times_;
 };
 
 

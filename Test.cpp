@@ -145,3 +145,27 @@ bool Test::add( const string& name, SORT_FUNC sort_func )
     sort_funcs_.insert( std::pair<string, SORT_FUNC>( name, sort_func ) );
     return true;
 }
+
+const map<string, long>& Test::calcTime( int size )
+{
+    vector<int>     raw_vec = genTestVector( size );
+    vector<int>     test_vec = raw_vec;
+
+    clock_t start_time = 0;
+    clock_t end_time  = 0;
+
+    elapsed_times_.clear( );
+
+    for ( auto it = sort_funcs_.begin( ); it != sort_funcs_.end( ); ++it )
+    {
+        const string name = it->first;
+        auto func = it->second;
+        test_vec = raw_vec;
+        start_time = clock( );
+        (*func)(test_vec);
+        end_time = clock( );
+        elapsed_times_[name] = end_time - start_time;
+    }
+
+    return elapsed_times_;
+}
