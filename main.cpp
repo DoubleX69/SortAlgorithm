@@ -20,6 +20,12 @@ int main( )
     if ( t.test( ) )
     {
         cout << "**************** Pass!! *******************" << endl;
+        map<string, long > elapsed_times = t.calcTime( 10000 );
+
+        for ( auto it = elapsed_times.begin( ); it != elapsed_times.end( ); ++it )
+        {
+            cout << it->first << " : " << it->second  << endl;
+        }
     }
     else
     {
