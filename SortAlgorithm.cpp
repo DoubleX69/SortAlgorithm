@@ -238,6 +238,6 @@ void quickSort2( vector<int>& v, int start, int end )
         }
 
         quickSort2( v, start, p_idx - 1 );
-        quickSort2( v, p_idx + 1, end );
+        quickSort2( v, right + 1, end );
     }
 }
